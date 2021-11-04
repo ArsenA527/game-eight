@@ -18,22 +18,22 @@ function init() {
     context.font = "bold " + (cellSize / 2) + "px sans-serif";
     context.textAlign = "center";
     context.textBaseline = "middle";
-    context.fillStyle = "#fff";
+    context.fillStyle = "#ececec";
   });
 
 
-  context.fillStyle = "#000";
+  context.fillStyle = "#ececec";
   context.fillRect(0, 0, canvas.width, canvas.height);
   field.draw(context, cellSize);
 
   function event(x, y) {
     field.move(x, y);
-    context.fillStyle = "#000";
+    context.fillStyle = "#ececec";
     context.fillRect(0, 0, canvas.width, canvas.height);
     field.draw(context, cellSize);
     if (field.victory()) { // если игра пройдена, то вызываем функцию перемешиваются
       field.mix(30);
-      context.fillStyle = "#000";
+      context.fillStyle = "#ececec";
       context.fillRect(0, 0, canvas.width, canvas.height);
       field.draw(context, cellSize);
     }
